@@ -152,18 +152,30 @@
   </div>
 
   <script>
-    // Auto-generate QR that links to this receipt page. When you host this HTML, the QR will point to the page URL.
-    (function(){
-      try{
-        var url = window.location.href;
-        // if you want the QR to point to a different URL, replace "url" below with your link string.
-        var qrSrc = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' + encodeURIComponent(url);
-        document.getElementById('qr').src = qrSrc;
-        document.getElementById('short-url').textContent = url;
-      } catch(e){
-        console.warn('QR generation skipped', e);
-      }
-    })();
+    <div style="text-align:center; margin-top:20px;">
+  <p style="font-weight:bold; color:#9c7b55;">Scan to view receipt online</p>
+  <img id="qr" alt="QR to this receipt" 
+       style="display:block; margin:10px auto; width:150px; height:150px; box-shadow:0 0 4px rgba(0,0,0,0.1); border-radius:8px;">
+  <p id="short-url" style="font-size:12px; color:#888; word-wrap:break-word;"></p>
+</div>
+
+<script>
+  // Auto-generate QR that links to this receipt page.
+  (function(){
+    try {
+      // Dapatkan URL halaman saat ini
+      var url = window.location.href;
+      // Buat link QR menggunakan Google Chart API
+      var qrSrc = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' + encodeURIComponent(url);
+      // Tampilkan QR di elemen <img id="qr">
+      document.getElementById('qr').src = qrSrc;
+      // Tampilkan URL pendek di bawah QR
+      document.getElementById('short-url').textContent = url;
+    } catch(e) {
+      console.warn('QR generation skipped', e);
+    }
+  })();
+</script>
 
     /*
       HOW TO EDIT:
