@@ -5,23 +5,18 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Receipt — Nata Azana Hotel Ngawi</title>
   <style>
-    /* Typography & base */
     :root{--brand:#b5885f;--muted:#9b8879;--text:#3a312e;--light:#faf7f6}
     html,body{height:100%;margin:0;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;background:#fff;color:var(--text);}
-    .page{max-width:900px;margin:24px auto;padding:28px;border:1px dashed #e6bcbc;background: #fff}
+    .page{max-width:900px;margin:24px auto;padding:28px;border:1px dashed #e6bcbc;background:#fff}
     header{display:flex;justify-content:space-between;align-items:center;border-bottom:4px solid rgba(181,150,114,0.08);padding-bottom:18px}
     .logo{display:flex;align-items:center;gap:12px}
     .logo img{height:58px;object-fit:contain}
     .hotel-name{font-size:26px;color:var(--brand);font-weight:700;letter-spacing:1px}
     .contact{font-size:13px;color:var(--muted)}
-
-    /* receipt meta */
     .meta{display:flex;justify-content:space-between;margin-top:20px}
     .guest, .dates{width:48%}
     .meta h4{margin:0 0 8px 0;color:var(--brand)}
     .small{font-size:13px;color:var(--muted);margin-top:6px}
-
-    /* table */
     .payment{margin-top:26px}
     table{width:100%;border-collapse:collapse}
     th,td{padding:14px 10px;border:1px solid #d9cdbf;text-align:left}
@@ -30,16 +25,10 @@
     .summary{width:45%;float:right;margin-top:12px}
     .summary table th, .summary table td{border:none;padding:6px 10px}
     .summary table td.right{font-weight:700}
-
-    /* payment info & notes */
     .bottom{display:flex;justify-content:space-between;gap:20px;clear:both;margin-top:36px}
     .payment-info{width:48%;font-size:13px}
     .notes{width:48%;font-size:13px;color:var(--muted)}
-
-    /* printable */
     @media print{.page{border:none;margin:0}button{display:none}}
-
-    /* small screens */
     @media (max-width:700px){.meta{flex-direction:column}.guest,.dates{width:100%}.summary{float:none;width:100%}}
   </style>
 </head>
@@ -47,8 +36,7 @@
   <div class="page" id="receipt">
     <header>
       <div class="logo">
-        <!-- Replace src with hotel logo -->
-       <img src="img/icon.png" alt="Nata Azana Hotel Ngawi" style="width:180px;">
+        <img src="img/icon.png" alt="Nata Azana Hotel Ngawi" style="width:180px;">
         <div>
           <div class="hotel-name">Nata Azana Hotel Ngawi</div>
           <div class="contact">by Azana • Jl. Suryo, Grudo, Ngawi Regency, East Java, Indonesia</div>
@@ -63,7 +51,7 @@
 
     <section class="meta">
       <div class="guest">
-        <h4>Receipt No.: <span id="rcpt-no">RCP/NGI/031125/0187</span></h4>
+        <h4>Receipt No.: <span id="rcpt-no">RCP/NGI/271025/0187</span></h4>
         <div><strong>Guest Name:</strong></div>
         <div id="guest-name">Nadia Sayyidah Arifah</div>
         <div class="small" id="guest-contact">nadiasayyidah17@gmail.com • +62 857-0845-8970</div>
@@ -72,7 +60,7 @@
         <h4>Booking Details</h4>
         <div><strong>Check-In Date:</strong> <span id="checkin">27 October 2025</span></div>
         <div><strong>Check-Out Date:</strong> <span id="checkout">29 October 2025</span></div>
-        <div class="small"><strong>Room:</strong> Deluxe Room • 2 Nights</div>
+        <div class="small"><strong>Room:</strong> Deluxe Room • 607 ( 2 Nights )</div>
       </div>
     </section>
 
@@ -97,7 +85,7 @@
         </tbody>
       </table>
 
-      <div class="summary" aria-hidden="false">
+      <div class="summary">
         <table>
           <tr>
             <th style="text-align:left">Subtotal:</th>
@@ -117,7 +105,6 @@
           </tr>
         </table>
       </div>
-
     </section>
 
     <div class="bottom">
@@ -136,53 +123,16 @@
           <li>For any questions regarding this receipt, please contact our billing department.</li>
           <li>Please retain this document for your records.</li>
         </ul>
-
-        <!-- QR area: by default it will generate a QR pointing to the current page URL using Google Chart API -->
-        <div style="margin-top:18px;text-align:center">
-          <div style="font-weight:700;margin-bottom:6px;color:var(--brand)">Scan to view receipt online</div>
-          <img id="qr" alt="QR to this receipt" style="width:140px;height:140px;border:6px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.15)" />
-          <div style="font-size:12px;color:var(--muted);margin-top:6px"></div>
-        </div>
       </div>
     </div>
 
-    <div style="margin-top:28px;font-size:12px;color:var(--muted);text-align:center">Issued by: Nata Azana Hotel Ngawi &nbsp; • &nbsp; Thank you for staying with us.</div>
+    <div style="margin-top:28px;font-size:12px;color:var(--muted);text-align:center">
+      Issued by: Nata Azana Hotel Ngawi &nbsp; • &nbsp; Thank you for staying with us.
+    </div>
 
-    <div style="margin-top:10px;text-align:center"><button onclick="window.print()">Print / Save as PDF</button></div>
+    <div style="margin-top:10px;text-align:center">
+      <button onclick="window.print()">Print / Save as PDF</button>
+    </div>
   </div>
-
-  <script>
-    <div style="text-align:center; margin-top:20px;">
-  <p style="font-weight:bold; color:#9c7b55;">Scan to view receipt online</p>
-  <img id="qr" alt="QR to this receipt" 
-       style="display:block; margin:10px auto; width:150px; height:150px; box-shadow:0 0 4px rgba(0,0,0,0.1); border-radius:8px;">
-  <p id="short-url" style="font-size:12px; color:#888; word-wrap:break-word;"></p>
-</div>
-
-<script>
-  // Auto-generate QR that links to this receipt page.
-  (function(){
-    try {
-      // Dapatkan URL halaman saat ini
-      var url = window.location.href;
-      // Buat link QR menggunakan Google Chart API
-      var qrSrc = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' + encodeURIComponent(url);
-      // Tampilkan QR di elemen <img id="qr">
-      document.getElementById('qr').src = qrSrc;
-      // Tampilkan URL pendek di bawah QR
-      document.getElementById('short-url').textContent = url;
-    } catch(e) {
-      console.warn('QR generation skipped', e);
-    }
-  })();
-</script>
-
-    /*
-      HOW TO EDIT:
-      - Change text content by editing the elements with ids: guest-name, rcpt-no, checkin, checkout, auth, tx-time, hotel-email, hotel-wa, hotel-tel.
-      - To change the QR target: replace `url` variable above with a different URL string (e.g. your hosted PDF link or a booking page).
-      - To create a barcode that points to this receipt: host this HTML file online (e.g. on your server or GitHub Pages) and the QR will point to that hosted URL.
-    */
-  </script>
 </body>
 </html>
